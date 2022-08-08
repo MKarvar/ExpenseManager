@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>BrainBridge.API</name>
+  </assembly>
+
+  <members>
+    <member name="M:BrainBridge.API.Controllers.v1.CardController.Insert(BrainBridge.ApplicationService.Commands.Card.CardInsertCommand)">
+      <summary>
+        Insert card
+      </summary>
+      <param name="command">
+        <example>TestNode</example>
+      </param>
+      <returns></returns>
+    </member>
+    <member name="P:BrainBridge.ApplicationService.Commands.Card.CardInsertCommand.Question">
+      <example>TestQuestion</example>
+    </member>
+    <member name="P:BrainBridge.ApplicationService.Commands.Card.CardInsertCommand.Answer">
+      <example>TestAnswer</example>
+    </member>
+  </members>
+</doc>
