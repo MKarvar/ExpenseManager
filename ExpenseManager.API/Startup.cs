@@ -40,9 +40,16 @@ namespace ExpenseManager.API
                 .AddJwtAuthentication(_siteSettings.JwtSettings);
         }
 
-    
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(x => x
+          .AllowAnyOrigin()
+          .AllowAnyMethod()
+          .AllowAnyHeader());
+
+            app.UseHttpsRedirection();
+
             app.UseCustomExceptionHandler();
             app.UseAuthentication();
             app.UseSwagger();

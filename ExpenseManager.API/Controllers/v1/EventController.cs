@@ -38,7 +38,6 @@ namespace ExpenseManager.API.Controllers.v1
             return Ok(eventDto);
         }
 
-
         [HttpPost("[action]")]
         public virtual async Task<ApiResult<EventDto>> Edit(EditEventCommand command, CancellationToken cancellationToken)
         {

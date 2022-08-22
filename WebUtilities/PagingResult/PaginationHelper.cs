@@ -21,8 +21,8 @@ namespace WebUtilities.PagingResult
                 query.PageNumber - 1 >= 1 && query.PageNumber <= roundedTotalPages
                 ? uriService.GetPageUri(new PaginationQuery() { PageNumber = query.PageNumber - 1, PageSize = query.PageSize }, route)
                 : null;
-            respose.FirstPage = uriService.GetPageUri(new PaginationQuery() { PageNumber = 1, PageSize = query.PageSize }, route);
-            respose.LastPage = uriService.GetPageUri(new PaginationQuery() { PageNumber = roundedTotalPages, PageSize = query.PageSize }, route);
+            respose.FirstPage = totalRecords <= 0 ? null : uriService.GetPageUri(new PaginationQuery() { PageNumber = totalPages == 0 ? 0 : 1, PageSize = query.PageSize }, route);
+            respose.LastPage = totalRecords <= 0 ? null : uriService.GetPageUri(new PaginationQuery() { PageNumber = roundedTotalPages, PageSize = query.PageSize }, route);
             respose.TotalPages = roundedTotalPages;
             respose.TotalRecords = totalRecords;
             return respose;
